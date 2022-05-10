@@ -41,7 +41,7 @@ function submitAnswers() {
     }
 
     // Set correct answers
-    var answers = ["b", "a"];
+    var answers = ["a", "a"];
 
     for (var i = 1; i <= total; i++) {
         // Check answers

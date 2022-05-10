@@ -1,5 +1,8 @@
+body {
+    overflow-x: hidden;
+}
+
 .slider-1.sliderContainer {
-    overflow: hidden;
     position: relative;
 }
 
