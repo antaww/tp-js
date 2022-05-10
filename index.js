@@ -54,7 +54,6 @@ function submitAnswers() {
     // Display results
     var results = document.getElementById('results');
     results.innerHTML = '<h3>You scored <span>' + score + '</span> out of <span>' + total + '</span></h3>';
-    //alert('You scored ' + score + ' out of ' + total);
 
     return false;
 }
