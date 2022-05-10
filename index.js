@@ -15,10 +15,7 @@ window.addEventListener("keydown", event => {
 
 function nextFunc() {
     pos = pos - 100;
-    if (pos < ((-nbSlide + 1) * 100)) {
-        sliderWraper.style.left = 0 + 'vw';
-        pos = 0;
-    } else {
+    if (!(pos < ((-nbSlide + 1) * 100))) {
         sliderWraper.style.left = pos + 'vw';
     }
 }
