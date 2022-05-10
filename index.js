@@ -7,41 +7,19 @@ var pos = 0;
 var nbSlide = imgs.length;
 
 
-window.addEventListener("keydown", event => {
-    if (event.key == "ArrowRight") {
-        nextFunc()
-    }
-})
+var total = 2;
+var score = 0;
 
-function nextFunc() {
-    pos = pos - 100;
-    if (!(pos < ((-nbSlide + 1) * 100))) {
-        sliderWraper.style.left = pos + 'vw';
-    }
-}
+//Get user input
+var q1 = document.forms['quizForm']['q1'].value;
+var q2 = document.forms['quizForm']['q2'].value;
 
-next.addEventListener('click', () => {
-    nextFunc();
-})
+
+
+// Set correct answers
+var answers = ["a", "a"];
 
 function submitAnswers() {
-    var total = 2;
-    var score = 0;
-
-    //Get user input
-    var q1 = document.forms['quizForm']['q1'].value;
-    var q2 = document.forms['quizForm']['q2'].value;
-
-    // Validation
-    for (var i = 1; i <= total; i++) {
-        if (eval('q' + i) === null || eval('q' + i) == '') {
-            alert('You missed question ' + i);
-            return false;
-        }
-    }
-
-    // Set correct answers
-    var answers = ["a", "a"];
 
     for (var i = 1; i <= total; i++) {
         // Check answers
@@ -57,4 +35,25 @@ function submitAnswers() {
 
     return false;
 }
+
+window.addEventListener("keydown", event => {
+    if (event.key == "ArrowRight") {
+        nextFunc()
+    }
+})
+
+function nextFunc() {
+    // Validation
+    //if
+    pos = pos - 100;
+    if (!(pos < ((-nbSlide + 1) * 100))) {
+        sliderWraper.style.left = pos + 'vw';
+    } else {
+        submitAnswers();
+    }
+}
+
+next.addEventListener('click', () => {
+    nextFunc();
+})
 
