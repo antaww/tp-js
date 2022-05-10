@@ -1,3 +1,9 @@
+body {
+    background-image: url("https://fs-prod-cdn.nintendo-europe.com/media/images/08_content_images/games_6/nintendo_switch_7/nswitch_overwatch/hero_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .slider-1.sliderContainer {
     overflow: hidden;
     position: relative;
