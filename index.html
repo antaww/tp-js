@@ -9,24 +9,31 @@
 <body>
 <h2>Quizz</h2>
 <section class="sliderContainer slider-1">
-    <div class="sliderContent">
-        <div class="agentHead">
-            <img alt="" class="agentPic"
-                 src="https://static.wikia.nocookie.net/overwatch_gamepedia/images/d/d2/Mccree-portrait.png/revision/latest?cb=20160620023859"/>
+    <div id="results"></div>
+    <form name="quizForm" onsubmit="return submitAnswers()">
+        <div class="sliderContent">
+            <div class="agentHead">
+                <img alt="" class="agentPic"
+                     src="https://static.wikia.nocookie.net/overwatch_gamepedia/images/d/d2/Mccree-portrait.png/revision/latest?cb=20160620023859"/>
+                <input type="radio" name="q1" value="a" id="q1a">a. &lt;js&gt;<br>
+                <input type="radio" name="q1" value="b" id="q1b">b. &lt;script&gt;<br>
+            </div>
+            <div>
+                <img alt="" class="agentPic"
+                     src="https://static.wikia.nocookie.net/overwatch_gamepedia/images/d/d8/Genji-portrait.png/revision/latest?cb=20170314223925"/>
+                <input type="radio" name="q2" value="a" id="q2a">a. &lt;js&gt;<br>
+                <input type="radio" name="q2" value="b" id="q2b">b. &lt;script&gt;<br>
+            </div>
         </div>
         <div>
-            <img alt="" class="agentPic"
-                 src="https://static.wikia.nocookie.net/overwatch_gamepedia/images/d/d8/Genji-portrait.png/revision/latest?cb=20170314223925"/>
-        </div>
-    </div>
-    <div>
-        <button class="next btn btn--light">
+            <button class="next btn btn--light">
       <span class="btn__inner">
         <span class="btn__slide"></span>
         <span class="btn__content">Next</span>
       </span>
-        </button>
-    </div>
+            </button>
+        </div>
+    </form>
 </section>
 
 </body>
