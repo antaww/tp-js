@@ -1,18 +1,24 @@
 var imgs = document.querySelectorAll('.slider-1 .sliderContent div');
-var prev = document.querySelector('.slider-1 .prev')
 var next = document.querySelector('.slider-1 .next')
 var sliderWraper = document.querySelector('.slider-1 .sliderContent')
 
 var pos = 0;
 var nbSlide = imgs.length;
 
-
-
-
-
-
 // Set correct answers
 var answers = ["a", "a", "bc"];
+
+// Get the correct answers from the user of checkboxes
+function GetCheckboxValues(question) {
+    var vals = "";
+    for (var i = 0, n = question.length; i < n; i++) {
+        if (question[i].checked) {
+            vals += question[i].value;
+        }
+    }
+    question = vals;
+    return question;
+}
 
 function submitAnswers() {
     var total = 3;
@@ -22,16 +28,7 @@ function submitAnswers() {
     var q1 = document.forms['quizForm']['q1'].value;
     var q2 = document.forms['quizForm']['q2'].value;
     var q3 = document.getElementsByName('q3');
-    var vals = "";
-    for (var i=0, n=q3.length;i<n;i++)
-    {
-        if (q3[i].checked)
-        {
-            vals += q3[i].value;
-        }
-    }
-    console.log(vals);
-
+    q3 = GetCheckboxValues(q3);
 
 
     for (var i = 1; i <= total; i++) {
@@ -39,9 +36,9 @@ function submitAnswers() {
         if (eval('q' + i) === answers[i - 1]) {
             score++;
         }
+        // Display answers
+        // console.log('q'+i,answers[i-1]);
     }
-    console.log(q1,q2,q3);
-    console.log(score);
 
     // Display results
     var results = document.getElementById('results');
