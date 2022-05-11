@@ -12,7 +12,7 @@ var nbSlide = imgs.length;
 
 
 // Set correct answers
-var answers = ["a", "a", "a"];
+var answers = ["a", "a", "bc"];
 
 function submitAnswers() {
     var total = 3;
@@ -21,7 +21,18 @@ function submitAnswers() {
 //Get user input
     var q1 = document.forms['quizForm']['q1'].value;
     var q2 = document.forms['quizForm']['q2'].value;
-    var q3 = document.querySelectorAll('input[name="q3"]:checked');
+    var q3 = document.getElementsByName('q3');
+    var vals = "";
+    for (var i=0, n=q3.length;i<n;i++)
+    {
+        if (q3[i].checked)
+        {
+            vals += q3[i].value;
+        }
+    }
+    console.log(vals);
+
+
 
     for (var i = 1; i <= total; i++) {
         // Check answers
