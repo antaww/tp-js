@@ -35,3 +35,15 @@ body {
     justify-content: space-around;
     position: relative;
 }
+
+.seqA_container {
+    width: 301px;
+    height: 390px;
+    overflow: hidden;
+}
+
+.seqB_container {
+    width:201px;
+    height:332px;
+    overflow: hidden;
+}
