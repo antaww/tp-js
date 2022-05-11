@@ -34,6 +34,8 @@ body {
     display: flex;
     justify-content: space-around;
     position: relative;
+    height: 100%;
+    align-items: center;
 }
 
 .seqA_container {
@@ -44,6 +46,6 @@ body {
 
 .seqB_container {
     width:201px;
-    height:332px;
+    height:302px;
     overflow: hidden;
 }
