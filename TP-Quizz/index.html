@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
 	<head>
 		<meta charset="UTF-8">
 		<script defer src="index.js"></script>
@@ -32,8 +31,24 @@
 						<input type="radio" name="q2" value="b" id="q2b">b. Nuit<br>
 					</div>
 					<div>
-						<img alt="" class="agentPic"
-						     src="https://static.wikia.nocookie.net/overwatch_gamepedia/images/d/d8/Genji-portrait.png/revision/latest?cb=20170314223925"/>
+						<section class="heroes">
+							<div class="hero genji"
+							     style='background-image: url("https://d1u1mce87gyfbn.cloudfront.net/hero/genji/hero-select-portrait.png"); background-color: rgb(124, 223, 26);'></div>
+							<div class="hero hanzo"
+							     style='background-image: url("https://d1u1mce87gyfbn.cloudfront.net/hero/hanzo/hero-select-portrait.png"); background-color: rgb(24, 62, 108);'></div>
+							<div class="hero ana"
+							     style='background-image: url("https://d1u1mce87gyfbn.cloudfront.net/hero/ana/hero-select-portrait.png"); background-color: rgb(187, 162, 122);'></div>
+							<div class="hero pharah"
+							     style='background-image: url("https://d1u1mce87gyfbn.cloudfront.net/hero/pharah/hero-select-portrait.png"); background-color: rgb(21, 98, 198);'></div>
+							<div class="hero junkrat"
+							     style='background-image: url("https://d1u1mce87gyfbn.cloudfront.net/hero/junkrat/hero-select-portrait.png"); background-color: rgb(176, 116, 13);'></div>
+							<div class="hero roadhog"
+							     style='background-image: url("https://d1u1mce87gyfbn.cloudfront.net/hero/roadhog/hero-select-portrait.png"); background-color: rgb(244, 188, 0);'></div>
+							<div class="hero torbjorn"
+							     style='background-image: url("https://d1u1mce87gyfbn.cloudfront.net/hero/torbjorn/hero-select-portrait.png"); background-color: rgb(110, 19, 16);'></div>
+							<div class="hero brigitte"
+							     style='background-image: url("https://d1u1mce87gyfbn.cloudfront.net/hero/brigitte/hero-select-portrait.png"); background-color: rgb(83, 20, 17);'></div>
+						</section>
 						<label>Parmis ces propositions, lesquels ont un lien de sang ?</label>
 						<input type="checkbox" name="q3" value="a" id="q3a"> Genji/Hanzo<br>
 						<input type="checkbox" name="q3" value="b" id="q3b"> Ana/Pharah<br>
@@ -52,7 +67,8 @@
 					<div>
 						<img alt="" class="agentPic"
 						     src=""/>
-						<label>Comment s'appelle l'organisation terroriste que Overwatch a combattu à maintes reprises ?</label>
+						<label>Comment s'appelle l'organisation terroriste que Overwatch a combattu à maintes reprises
+							?</label>
 						<input type="radio" name="q5" value="a" id="q5a">a. Blackwatch<br>
 						<input type="radio" name="q5" value="b" id="q5b">b. Vishkar Corporation<br>
 						<input type="radio" name="q5" value="c" id="q5c">c. La Griffe<br>
@@ -95,12 +111,18 @@
 						<img alt="" class="agentPic"
 						     src=""/>
 						<label>Lequel de ces ordres chronologique des missions d'Archives est le bon ?</label>
-						<input type="radio" name="q9" value="a" id="q9a">a. Représailles, Avis de Tempête, Insurrection<br>
-						<input type="radio" name="q9" value="b" id="q9b">b. Représailles, Insurrection, Avis de Tempête<br>
-						<input type="radio" name="q9" value="c" id="q9c">c. Insurrection, Représailles, Avis de Tempête<br>
-						<input type="radio" name="q9" value="d" id="q9d">c. Insurrection, Avis de Tempête, Représailles<br>
-						<input type="radio" name="q9" value="e" id="q9e">d. Avis de Tempête, Insurrection, Représailles<br>
-						<input type="radio" name="q9" value="f" id="q9f">d. Avis de Tempête, Représailles, Insurrection<br>
+						<input type="radio" name="q9" value="a" id="q9a">a. Représailles, Avis de Tempête,
+						Insurrection<br>
+						<input type="radio" name="q9" value="b" id="q9b">b. Représailles, Insurrection, Avis de
+						Tempête<br>
+						<input type="radio" name="q9" value="c" id="q9c">c. Insurrection, Représailles, Avis de
+						Tempête<br>
+						<input type="radio" name="q9" value="d" id="q9d">c. Insurrection, Avis de Tempête,
+						Représailles<br>
+						<input type="radio" name="q9" value="e" id="q9e">d. Avis de Tempête, Insurrection,
+						Représailles<br>
+						<input type="radio" name="q9" value="f" id="q9f">d. Avis de Tempête, Représailles,
+						Insurrection<br>
 					</div>
 					<div>
 						<img alt="" class="agentPic"
@@ -113,74 +135,11 @@
 				</div>
 			</form>
 			<button class="next btn btn--light">
-=======
-<head>
-    <meta charset="UTF-8">
-    <script defer src="index.js"></script>
-    <link href="index.css" rel="stylesheet">
-    <link href="https://static.wikia.nocookie.net/overwatch_gamepedia/images/0/09/Overwatch_logo.png/revision/latest/scale-to-width-down/90?cb=20151114212304"
-          rel="icon" type="text/css">
-    <title>OW Quizz</title>
-</head>
-<body>
-<h2>Quizz</h2>
-<section class="sliderContainer slider-1">
-    <div id="results"></div>
-    <form name="quizForm" onsubmit="return submitAnswers()">
-        <div class="sliderContent">
-            <div class="agentHead">
-                <img alt="" class="agentPic"
-                     src="https://static.wikia.nocookie.net/overwatch_gamepedia/images/d/d2/Mccree-portrait.png/revision/latest?cb=20160620023859"/>
-                <label>Quel était l'ancien nom dans le jeu de Cassidy ?</label>
-                <input id="q1a" name="q1" type="radio" value="a">a. McCree<br>
-                <input id="q1b" name="q1" type="radio" value="b">b. Bebop<br>
-                <input id="q1c" name="q1" type="radio" value="c">c. Luke<br>
-                <input id="q1d" name="q1" type="radio" value="c">d. Reyes<br>
-            </div>
-            <div>
-                <img alt="" class="agentPic"
-                     src="https://static.wikia.nocookie.net/overwatch_gamepedia/images/d/d8/Genji-portrait.png/revision/latest?cb=20170314223925"/>
-                <label>Sur la carte "La Havane" fait-il jour ou nuit ?</label>
-                <input id="q2a" name="q2" type="radio" value="a">a. Jour<br>
-                <input id="q2b" name="q2" type="radio" value="b">b. Nuit<br>
-
-            </div>
-            <div>
-                <section class="heroes">
-                    <div class="hero genji"
-                         style='background-image: url("https://d1u1mce87gyfbn.cloudfront.net/hero/genji/hero-select-portrait.png"); background-color: rgb(124, 223, 26);'></div>
-                    <div class="hero hanzo"
-                         style='background-image: url("https://d1u1mce87gyfbn.cloudfront.net/hero/hanzo/hero-select-portrait.png"); background-color: rgb(24, 62, 108);'></div>
-                    <div class="hero ana"
-                         style='background-image: url("https://d1u1mce87gyfbn.cloudfront.net/hero/ana/hero-select-portrait.png"); background-color: rgb(187, 162, 122);'></div>
-                    <div class="hero pharah"
-                         style='background-image: url("https://d1u1mce87gyfbn.cloudfront.net/hero/pharah/hero-select-portrait.png"); background-color: rgb(21, 98, 198);'></div>
-                    <div class="hero junkrat"
-                         style='background-image: url("https://d1u1mce87gyfbn.cloudfront.net/hero/junkrat/hero-select-portrait.png"); background-color: rgb(176, 116, 13);'></div>
-                    <div class="hero roadhog"
-                         style='background-image: url("https://d1u1mce87gyfbn.cloudfront.net/hero/roadhog/hero-select-portrait.png"); background-color: rgb(244, 188, 0);'></div>
-                    <div class="hero torbjorn"
-                         style='background-image: url("https://d1u1mce87gyfbn.cloudfront.net/hero/torbjorn/hero-select-portrait.png"); background-color: rgb(110, 19, 16);'></div>
-                    <div class="hero brigitte"
-                         style='background-image: url("https://d1u1mce87gyfbn.cloudfront.net/hero/brigitte/hero-select-portrait.png"); background-color: rgb(83, 20, 17);'></div>
-                </section>
-
-                <label>Parmis ces propositions, lesquels ont un lien de sang ?</label>
-                <input id="q3a" name="q3" type="checkbox" value="a"> Genji/Hanzo<br>
-                <input id="q3b" name="q3" type="checkbox" value="b"> Ana/Pharah<br>
-                <input id="q3c" name="q3" type="checkbox" value="c"> Chacal/Chopper<br>
-                <input id="q3d" name="q3" type="checkbox" value="d"> Torbjorn/Brigitte<br>
-            </div>
-        </div>
-
-    </form>
-    <button class="next btn btn--light">
->>>>>>> 90a233d436ee1ebf847e20d925e1fd287c12c837
-      <span class="btn__inner">
-        <span class="btn__slide"></span>
-        <span class="btn__content">Next</span>
-      </span>
-    </button>
-</section>
-</body>
+			      <span class="btn__inner">
+			        <span class="btn__slide"></span>
+			        <span class="btn__content">Next</span>
+			      </span>
+			</button>
+		</section>
+	</body>
 </html>
