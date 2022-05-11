@@ -66,3 +66,26 @@ next.addEventListener('click', () => {
     nextFunc();
 })
 
+
+//check it every second
+setInterval(() => {
+    const checkedA = document.getElementById("q3a").checked;
+    document.getElementsByClassName("genji")[0].style.filter = `grayscale(${checkedA ? 0 : 100}`;
+    document.getElementsByClassName("hanzo")[0].style.filter = `grayscale(${checkedA ? 0 : 100}`;
+
+    const checkedB = document.getElementById("q3b").checked;
+    document.getElementsByClassName("ana")[0].style.filter = `grayscale(${checkedB ? 0 : 100}`;
+    document.getElementsByClassName("pharah")[0].style.filter = `grayscale(${checkedB ? 0 : 100}`;
+
+    const checkedC = document.getElementById("q3c").checked;
+    document.getElementsByClassName("junkrat")[0].style.filter = `grayscale(${checkedC ? 0 : 100}`;
+    document.getElementsByClassName("roadhog")[0].style.filter = `grayscale(${checkedC ? 0 : 100}`;
+
+    const checkedD = document.getElementById("q3d").checked;
+    document.getElementsByClassName("torbjorn")[0].style.filter = `grayscale(${checkedD ? 0 : 100}`;
+    document.getElementsByClassName("brigitte")[0].style.filter = `grayscale(${checkedD ? 0 : 100}`;
+}, 200);
+
+
+
+

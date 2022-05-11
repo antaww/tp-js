@@ -16,7 +16,7 @@ body {
     left: 0;
 }
 
-.slider-1 .sliderContent div {
+.slider-1 .sliderContent div:not(.hero) {
     position: relative;
     max-width: 100vw;
     min-width: 100vw;
@@ -28,4 +28,39 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
+.hero {
+    flex: 0 0 auto;
+    position: relative;
+    margin: 8px 4px;
+    border: solid white;
+    border-top-width: medium;
+    border-right-width: medium;
+    border-bottom-width: medium;
+    border-left-width: medium;
+    border-width: 4px 0px;
+    border-radius: 5px;
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    width: 150px !important;
+    height: 180px !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 80%;
+    transition: all 0.3s;
+    filter: grayscale(90%);
+}
+
+.hero:hover {
+    filter: grayscale(0%);
+}
+
+.heroes {
+    position: relative;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 
