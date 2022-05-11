@@ -28,3 +28,10 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.animated {
+    z-index:2;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
