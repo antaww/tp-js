@@ -6,7 +6,7 @@ var pos = 0;
 var nbSlide = imgs.length;
 
 // Set correct answers
-var answers = ["a", "a", "bc"];
+var answers = ["a", "a", "abd"];
 
 // Get the correct answers from the user of checkboxes
 function GetCheckboxValues(question) {
