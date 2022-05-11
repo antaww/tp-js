@@ -1,8 +1,18 @@
+@font-face {
+    font-family: "Big Noodle Too";
+    src: url(https://overwatch-a.akamaihd.net/fonts/big-noodle-too-eaef42cc66ce3dcbe29cd88eca8801d55fe8dcc11c7153cc9c3f3418084ef1c50b1b7e270c826ded2d868a825af5c5b9d9be69d25795aae62c721c64faef1a95.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
 body {
     overflow-x: hidden;
     background-image: url("https://fs-prod-cdn.nintendo-europe.com/media/images/08_content_images/games_6/nintendo_switch_7/nswitch_overwatch/hero_bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: "Big Noodle Too";
+    font-weight: bold;
+    font-size: 2vw;
 }
 
 .slider-1.sliderContainer {
@@ -28,6 +38,30 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
+.next {
+    display: inline-block;
+    min-width: 150px;
+    line-height: 65px;
+    padding: 0px 3px;
+    border: 3px solid transparent;
+    background-color: #ffd200;
+    box-shadow: 0px 0px 3px #ffd200;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    opacity: 0.8;
+    text-transform: uppercase;
+    font-size: 42px;
+    color: white;
+    text-shadow: 0px 0px 2px white;
+    transition: opacity 0.2s ease-out, border 0.2s ease-out;
+    font-family: "Big Noodle Too";
+}
+.next:hover {
+    opacity: 1;
+    border: 3px solid white;
+}
+
 
 .hero {
     flex: 0 0 auto;
