@@ -92,6 +92,9 @@ setInterval(() => {
     const checkedD = document.getElementById("q3d").checked;
     document.getElementsByClassName("torbjorn")[0].style.filter = `grayscale(${checkedD ? 0 : 100}`;
     document.getElementsByClassName("brigitte")[0].style.filter = `grayscale(${checkedD ? 0 : 100}`;
+
+    const checkedE = document.getElementById("q7c").checked;
+    document.getElementsByClassName("reinhardt")[0].style.filter = `grayscale(${checkedE ? 0 : 100}`;
 }, 400);
 
 
