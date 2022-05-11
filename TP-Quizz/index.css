@@ -51,10 +51,6 @@ body {
     filter: grayscale(90%);
 }
 
-.hero:hover {
-    filter: grayscale(0%);
-}
-
 .heroes {
     position: relative;
     width: 70%;
