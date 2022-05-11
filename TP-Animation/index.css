@@ -40,12 +40,15 @@ body {
 
 .seqA_container {
     width: 301px;
-    height: 390px;
+    height: 389px;
     overflow: hidden;
+    background-image: url("seq-a.png");
 }
 
 .seqB_container {
-    width:201px;
-    height:302px;
+    width:203px;
+    height:290px;
     overflow: hidden;
+    background-image: url("seq-b.png");
+
 }
