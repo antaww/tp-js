@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Meteo</title>
-		<script defer src="app.js"></script>
-		<script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
-		<link rel="icon" href="https://openweathermap.org/favicon.ico">
-		<link rel="stylesheet" href="index.css">
-	</head>
-	<body>
-		<div class="container">
-			<form method="post">
-				<!--        <input type="text" name="city" id="city" placeholder="Enter a city">-->
-				<!--        <input type="submit" id="search" value="Search">-->
-
-				<input name="city" id="city" class="searchbar" type="text" placeholder="Entrez une ville...">
-				<a id="btnSearch" class="btn-search"><i class="fa fa-search"></i></a>
-			</form>
-			<div class="content">
-				<div class="city">Ville :</div>
-				<div class="temp">Température :</div>
-				<div class="wind">Vent :</div>
-				<div class="humidity">Humidité :</div>
-				<div class="weather">Temps :</div>
-				<div class="coord">Coordonnées :</div>
-			</div>
-
-		</div>
-	</body>
->>>>>>> 75089a91c195763aa4f8620ae384e9241e51b158
+<head>
+    <meta charset="UTF-8">
+    <title>Meteo</title>
+    <script defer src="app.js"></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/74fed0e2b5.js"></script>
+    <link href="https://openweathermap.org/favicon.ico" rel="icon">
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div class="general">
+    <div class="container">
+        <form method="post" id="form">
+            <input id="city" name="city" placeholder="Entrez une ville..." type="text">
+            <a id="search" class="btn-search"><i class="fa fa-search"></i></a>
+        </form>
+    </div>
+    <div class="content">
+        <div class="city">Ville :</div>
+        <div class="temp">Température :</div>
+        <div class="wind">Vent :</div>
+        <div class="humidity">Humidité :</div>
+        <div class="weather">Temps :</div>
+        <div class="coord">Coordonnées :</div>
+    </div>
+</div>
+</body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </html>

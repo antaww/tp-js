@@ -2,18 +2,39 @@ const APIKEY = '40950c7271250babae1c93007b9ba7c0';
 
 let submit = document.getElementById('search');
 let cityName = document.getElementById('city');
+let form = document.getElementById('form');
 
+//Calling API by clicking "search" button / Shaking animation if no city is entered
 submit.addEventListener('click', function (e) {
+    if (cityName.value === '') {
+        console.log('Please enter a city name');
+        form.classList.add('shake');
+        setTimeout(function () {
+            form.classList.remove('shake');
+        }, 0.5 * 1000);
+        return;
+    }
     CallAPI(cityName.value);
     e.preventDefault();
 });
 
+//Calling API with "ENTER" key / Shaking animation if no city is entered
+window.addEventListener('keydown', function (e) {
+    if (e.keyCode === 13) {
+        if (cityName.value === '') {
+            console.log('Please enter a city name');
+            form.classList.add('shake');
+            setTimeout(function () {
+                form.classList.remove('shake');
+            }, 0.5 * 1000);
+            return;
+        }
+        CallAPI(cityName.value);
+        e.preventDefault();
+    }
+});
 
-/**
- * Il prend un nom de ville comme paramètre, puis utilise l'API Fetch pour appeler l'API OpenWeatherMap et obtenir les
- * données météorologiques de la ville
- * @param cityName - Le nom de la ville pour laquelle vous voulez obtenir la météo.
- */
+
 function CallAPI(cityName) {
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKEY}&units=metric&lang=fr`;
     let city = document.querySelector('.city');
