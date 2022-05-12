@@ -39,12 +39,16 @@ window.addEventListener('keydown', function (e) {
 function CallAPI(cityName) {
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKEY}&units=metric&lang=fr`;
     let city = document.querySelector('.city');
-    let temp = document.querySelector('.temp');
     let wind = document.querySelector('.wind');
     let humidity = document.querySelector('.humidity');
     let weather = document.querySelector('.weather');
-    let weather_icon = document.querySelector('.weather_icon');
     let coord = document.querySelector('.coord');
+
+    //TEMPERATURE
+    let temp = document.querySelector('.temp');
+    let feelsLike = document.querySelector('.feels-like');
+    let tempMin = document.querySelector('.temp-min');
+    let tempMax = document.querySelector('.temp-max');
 
     // display content
     content[0].style.display = 'flex';
@@ -64,5 +68,8 @@ function CallAPI(cityName) {
         meteo_icon = data.weather[0].icon;
         weather.innerHTML = "<img src='http://openweathermap.org/img/wn/" + meteo_icon + "@2x.png'>" + meteo_description;
         coord.innerHTML = "Coordonnées : " + data.coord.lat + " / " + data.coord.lon;
+        feelsLike.innerHTML = "Température ressentie : " + data.main.feels_like + "°C";
+        tempMin.innerHTML = "Température minimale : " + data.main.temp_min + "°C";
+        tempMax.innerHTML = "Température maximale : " + data.main.temp_max + "°C";
     });
 }
