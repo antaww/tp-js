@@ -9,6 +9,11 @@ submit.addEventListener('click', function (e) {
 });
 
 
+/**
+ * Il prend un nom de ville comme paramètre, puis utilise l'API Fetch pour appeler l'API OpenWeatherMap et obtenir les
+ * données météorologiques de la ville
+ * @param cityName - Le nom de la ville pour laquelle vous voulez obtenir la météo.
+ */
 function CallAPI(cityName) {
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKEY}&units=metric&lang=fr`;
     let city = document.querySelector('.city');
