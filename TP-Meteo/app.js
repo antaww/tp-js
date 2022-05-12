@@ -43,6 +43,7 @@ function CallAPI(cityName) {
     let wind = document.querySelector('.wind');
     let humidity = document.querySelector('.humidity');
     let weather = document.querySelector('.weather');
+    let weather_icon = document.querySelector('.weather_icon');
     let coord = document.querySelector('.coord');
 
     // display content
@@ -60,7 +61,8 @@ function CallAPI(cityName) {
         humidity.innerHTML = "<i class='fa-solid fa-droplet'></i>" + data.main.humidity + " %";
         meteo_description = data.weather[0].description;
         meteo_description = meteo_description.charAt(0).toUpperCase() + meteo_description.slice(1);
-        weather.innerHTML = "Temps : " + meteo_description;
+        meteo_icon = data.weather[0].icon;
+        weather.innerHTML = "<img src='http://openweathermap.org/img/wn/" + meteo_icon + "@2x.png'>" + meteo_description;
         coord.innerHTML = "Coordonnées : " + data.coord.lat + " / " + data.coord.lon;
     });
 }
