@@ -1,3 +1,77 @@
-.content  {
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.content {
+    /*position: absolute;*/
+    /*top: 9.2em;*/
+    /*left: -10em;*/
+    /*height: 6em;*/
+    /*width: 26em;*/
+    background: #fff;
+    /*margin-left: -0.5em;*/
+    color: #1A2238;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    /*justify-content: space-around;*/
+    z-index: 5;
+    box-shadow: #0f1923 0 0 5px;
+    max-width: fit-content;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    border-radius: 5%;
+    margin: 1.5em;
+    padding: 1.5em;
+}
+
+.content .city {
+    font-size: 1.5em;
+    margin: 0.5em;
+}
+
+.content .box-container {
     display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+}
+
+.content .box-container span {
+    margin: 0.2em 0;
+}
+
+.content .week-preview {
+    border-spacing: 0.2em 0.2em;
+}
+
+.content .week-preview tr {
+    text-align: right;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.temp {
+    background-color: #ff4655;
+}
+
+.wind {
+    background-color: #ffb400;
+}
+
+.humidity {
+    background-color: #ff0000;
+}
+
+.weather {
+    background-color: #00bcd4;
+}
+
+.coord {
+    background-color: #420a4f;
 }

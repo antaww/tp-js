@@ -2,6 +2,7 @@ const APIKEY = '40950c7271250babae1c93007b9ba7c0';
 
 let submit = document.getElementById('search');
 let cityName = document.getElementById('city');
+let content = document.getElementsByClassName('content');
 
 submit.addEventListener('click', function (e) {
     CallAPI(cityName.value);
@@ -23,12 +24,19 @@ function CallAPI(cityName) {
     let weather = document.querySelector('.weather');
     let coord = document.querySelector('.coord');
 
-
+    // display content
+    content[0].style.display = 'flex';
     fetch(url).then(response => response.json()).then(data => {
-        city.innerHTML = "Ville : " + data.name;
-        temp.innerHTML = "Température: " + data.main.temp + "°C";
-        wind.innerHTML = "<i class='fa-solid fa-wind'></i>" + "Vent : " + data.wind.speed + " m/s";
-        humidity.innerHTML = "Humidité : " + data.main.humidity + " %";
+        city.innerHTML = "Météo de \n " + data.name;
+        if (data.main.temp > 21) {
+            temp.innerHTML = "<i class=\"fa-solid fa-temperature-high\"></i>" + data.main.temp + "°C";
+        } else if (data.main.temp < 10) {
+            temp.innerHTML = "<i class=\"fa-solid fa-temperature-low\"></i>" + data.main.temp + "°C";
+        } else {
+            temp.innerHTML = "<i class=\"fa-solid fa-temperature-half\"></i>" + data.main.temp + "°C";
+        }
+        wind.innerHTML = "<i class='fa-solid fa-wind'></i>" + data.wind.speed + " m/s";
+        humidity.innerHTML = "<i class='fa-solid fa-droplet'></i>" + data.main.humidity + " %";
         meteo_description = data.weather[0].description;
         meteo_description = meteo_description.charAt(0).toUpperCase() + meteo_description.slice(1);
         weather.innerHTML = "Temps : " + meteo_description;
