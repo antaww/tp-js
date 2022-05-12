@@ -42,7 +42,7 @@ body {
 .content .box-container {
     display: flex;
     flex-wrap: wrap;
-    width: 300px;
+    width: 600px;
     height: 300px;
 }
 
@@ -69,15 +69,27 @@ body {
 }
 
 .temp {
-    background-color: #ff4655;
-}
-
-.wind {
     background-color: #ffb400;
 }
 
+.temp-max {
+    background-color: #ff5c00;
+}
+
+.temp-min {
+    background-color: #00d4ff;
+}
+
+.feels-like {
+    background-color: #fff200;
+}
+
+.wind {
+    background-color: #adf5e2;
+}
+
 .humidity {
-    background-color: #ff0000;
+    background-color: #009dff;
 }
 
 .weather {
@@ -85,7 +97,7 @@ body {
 }
 
 .coord {
-    background-color: #420a4f;
+    background-color: #00d81d;
 }
 
 

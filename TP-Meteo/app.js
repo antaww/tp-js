@@ -68,8 +68,8 @@ function CallAPI(cityName) {
         meteo_icon = data.weather[0].icon;
         weather.innerHTML = "<img src='http://openweathermap.org/img/wn/" + meteo_icon + "@2x.png'>" + meteo_description;
         coord.innerHTML = "Coordonnées : " + data.coord.lat + " / " + data.coord.lon;
-        feelsLike.innerHTML = "Température ressentie : " + data.main.feels_like + "°C";
-        tempMin.innerHTML = "Température minimale : " + data.main.temp_min + "°C";
-        tempMax.innerHTML = "Température maximale : " + data.main.temp_max + "°C";
+        feelsLike.innerHTML = "<i class=\"fa-solid fa-temperature-high\"></i>" + data.main.feels_like + "°C";
+        tempMin.innerHTML = "<i class=\"fa-solid fa-temperature-arrow-down\"></i>" + data.main.temp_min + "°C";
+        tempMax.innerHTML = "<i class=\"fa-solid fa-temperature-arrow-up\"></i>" + data.main.temp_max + "°C";
     });
 }
