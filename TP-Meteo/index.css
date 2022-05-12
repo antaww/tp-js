@@ -1,4 +1,16 @@
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+
+:root {
+    --body-color: #575757;
+    --background-color: rgb(55, 55, 55);
+}
+
+body {
+    background-color: var(--body-color);
+}
 
 .content {
     /*position: absolute;*/
@@ -74,4 +86,73 @@
 
 .coord {
     background-color: #420a4f;
+}
+
+
+
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background-color: var(--background-color);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row-reverse;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+}
+
+#city {
+    background-color: var(--background-color);
+    color: white;
+    float: right;
+    padding: 6px 10px;
+    width: 80px;
+    border: none;
+    margin-top: 1px;
+    margin-right: 8px;
+    font-family: "Ubuntu";
+    font-size: 1em;
+    font-weight: bold;
+    border-bottom: white solid 2px;
+    transition: 0.3s;
+}
+
+#city::placeholder {
+    color: white;
+    font-family: "Ubuntu";
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.2s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#city:focus {
+    width: 200px;
+    font-family: "Ubuntu";
+    font-size: 1em;
+    font-weight: bold;
+    transition: 0.3s;
+    border-bottom: white solid 2px;
+    outline: none;
+}
+
+.btn-search {
+    cursor: pointer;
+    color: white;
+    text-decoration: none !important;
+    font-family: "Segoe UI Light","Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
+}
+
+.shake {
+    animation: headShake 0.5s linear alternate;
 }
