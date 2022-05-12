@@ -1,7 +1,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
 
-@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+@import url(https://fonts.googleapis.com/css?family=Poppins:700,300);
 
 :root {
     --body-color: #575757;
@@ -28,7 +28,7 @@ body {
     z-index: 5;
     box-shadow: #0f1923 0 0 5px;
     max-width: fit-content;
-    font-family: "Open Sans", Helvetica, sans-serif;
+    font-family: "Poppins";
     border-radius: 5%;
     margin: 1.5em;
     padding: 1.5em;
@@ -131,7 +131,7 @@ form {
     border: none;
     margin-top: 1px;
     margin-right: 8px;
-    font-family: "Ubuntu";
+    font-family: "Poppins";
     font-size: 1em;
     font-weight: bold;
     border-bottom: white solid 2px;
@@ -140,7 +140,7 @@ form {
 
 #city::placeholder {
     color: white;
-    font-family: "Ubuntu";
+    font-family: "Poppins";
     font-size: 15px;
     font-weight: bold;
     transition: 0.2s;
@@ -150,7 +150,7 @@ form {
 
 #city:focus {
     width: 200px;
-    font-family: "Ubuntu";
+    font-family: "Poppins";
     font-size: 1em;
     font-weight: bold;
     transition: 0.3s;
