@@ -50,25 +50,30 @@ body {
     align-items: center;
     border-radius: 0.5ex;
 
-    border: goldenrod solid 10px;
-    background: green;
+    border-image: linear-gradient(to bottom, goldenrod, gold, goldenrod) 1;
+    border-width: 10px;
+    border-style: solid;
+    background: url("https://media.istockphoto.com/vectors/poker-table-background-in-green-color-vector-id1206505233?k=20&m=1206505233&s=612x612&w=0&h=QBYw3shQkcZG2g1qG8udx8nrUsqnPZNooSaLNIs5elo=");
 }
 
 .slots {
     display: flex;
     flex-direction: row;
     border-radius: 0.5ex;
+    margin: 2em;
 
 }
 
 .door {
     background: #fafafa;
     box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4) inset;
-    border: goldenrod solid 10px;
+    border-image: linear-gradient(to bottom, goldenrod, gold) 1;
+    border-width: 10px;
+    border-style: solid;
 
 
-    width: 100px;
-    height: 150px;
+    width: 150px;
+    height: 225px;
     overflow: hidden;
 
     border-radius: 1ex;
@@ -94,7 +99,6 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     color: #fafafa;
-    text-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4) inset;
 }
 
 .buttons {
@@ -133,7 +137,6 @@ button {
     height:5em;
     background:#555;
     border-radius:50%;
-    position:relative;
     border:.5em dashed white;
     transition:all .5s ease;
     backface-visibility:hidden;
