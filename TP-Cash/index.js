@@ -44,7 +44,6 @@ function shuffle([...arr]) {
 }
 
 function SpinFunc(i) {
-    isSpinning = true;
     console.clear();
     doors.forEach(door => {
         door.innerHTML = '';
@@ -53,8 +52,16 @@ function SpinFunc(i) {
     console.log("Coins bet : ", i);
     if (wallet - i < 0) {
         console.log("You don't have enough money to play");
+        for (let i = 0; i < doors.length; i++) {
+            setTimeout(function () {
+                doors[i].innerHTML = "<div class='boxes'>" + "❌" + "</div>";
+                let box = doors[i].querySelector('.boxes');
+                box.classList.add('heartBeat');
+            }, i * 500);
+        }
         return
     }
+    isSpinning = true;
     wallet -= i;
     coins.innerHTML = wallet;
     let shuffledItems = shuffle(items);
