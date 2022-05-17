@@ -23,6 +23,7 @@ submit.addEventListener('click', function (e) {
 window.addEventListener('keydown', function (e) {
     if (e.keyCode === 13) {
         if (cityName.value === '') {
+            e.preventDefault();
             console.log('Please enter a city name');
             form.classList.add('shake');
             setTimeout(function () {
@@ -31,7 +32,6 @@ window.addEventListener('keydown', function (e) {
             return;
         }
         CallAPI(cityName.value);
-        e.preventDefault();
     }
 });
 
