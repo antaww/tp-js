@@ -71,14 +71,16 @@ body {
     border-image: linear-gradient(to bottom, goldenrod, gold) 1;
     border-width: 10px;
     border-style: solid;
-
-
     width: 150px;
     height: 225px;
     overflow: hidden;
-
     border-radius: 1ex;
     margin: 1ch;
+    text-align: center;
+    font-size: 44px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }
 
 .boxes {
@@ -189,6 +191,16 @@ button {
     border-radius: 10%;
     font-family: Poppins, serif;
     color: gold;
+}
+
+#coinLogo {
+    width: 2em;
+    height: 2em;
+    margin: 0.4em;
+}
+
+.heartBeat {
+    animation: heartBeat .5s ease-in-out;
 }
 
 .coins {

@@ -1,58 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Cash machine</title>
-		<link rel="stylesheet" href="index.css">
-		<script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
-		<script defer src="index.js"></script>
-	</head>
-	<body>
-		<div class="background"></div>
-		<div id="app">
-			<div class="total">
-				<div class="content">
-					Jetons disponibles :
-					<div class="coins"></div>
-				</div>
-				<div class="content">
-					Gains :
-					<div class="coins"></div>
-				</div>
-			</div>
-			
-			<div class="benefits"></div>
-			<div class="doors">
-				<div class="slots">
+<head>
+    <meta charset="UTF-8">
+    <title>Cash machine</title>
+    <link href="index.css" rel="stylesheet">
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/74fed0e2b5.js"></script>
+    <script defer src="index.js"></script>
+</head>
+<body>
+<div class="background"></div>
+<div id="app">
+    <div class="total">
+        <div class="content">
+            Jetons disponibles :
+            <div class="coins"></div>
+        </div>
+        <div class="content">
+            Gains :
+            <div class="benefits"></div>
+        </div>
+    </div>
 
-					<div class="door">
-						<div class="boxes">
-						</div>
-					</div>
 
-					<div class="door">
-						<div class="boxes">
-						</div>
-					</div>
+    <div class="doors">
+        <div class="slots">
+            <div class="door">
+            </div>
+            <div class="door">
+            </div>
+            <div class="door">
+            </div>
+        </div>
 
-					<div class="door">
-						<div class="boxes">
-						</div>
-					</div>
-				</div>
+        <div class="name">
+            Pespi, poulet pikante
+        </div>
+    </div>
 
-				<div class="name">
-					Pespi, poulet pikante
-				</div>
-			</div>
+    <div class="buttons">
+        <button class="spinner iso " id="spinner10">10</button>
+        <button class="spinner iso red" id="spinner50">50</button>
+        <button class="spinner iso blue" id="spinner200">200</button>
+    </div>
+    <p class="info"></p>
+</div>
 
-			<div class="buttons">
-				<button class="spinner iso " id="spinner10">10</button>
-				<button class="spinner iso red" id="spinner50">50</button>
-				<button class="spinner iso blue" id="spinner200">200</button>
-			</div>
-			<p class="info"></p>
-		</div>
-
-	</body>
+</body>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
 </html>
