@@ -18,11 +18,12 @@ body {
     /*left: -10em;*/
     /*height: 6em;*/
     /*width: 26em;*/
-    background: #fff;
+    background: #373737;
     /*margin-left: -0.5em;*/
-    color: #1A2238;
+    color: #ffffff;
     display: none;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     /*justify-content: space-around;*/
     z-index: 5;
@@ -30,20 +31,21 @@ body {
     max-width: fit-content;
     font-family: "Poppins";
     border-radius: 5%;
-    margin: 1.5em;
+    margin: 3em auto;
     padding: 1.5em;
+
 }
 
 .content .city {
-    font-size: 1.5em;
+    font-size: 2em;
     margin: 0.5em;
 }
 
 .content .box-container {
     display: flex;
     flex-wrap: wrap;
-    width: 300px;
-    height: 300px;
+    width: 850px;
+    height: 420px;
 }
 
 .content .box-container span {
@@ -59,33 +61,46 @@ body {
 }
 
 .box {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 1.5em;
+    border-right: 5px solid #373737;
+    border-left: 5px solid #373737;
+    border-bottom: 5px solid #373737;
+    text-align: center;
 }
 
-.temp {
-    background-color: #ff4655;
+
+.temp-max {
+    background-color: rgba(255, 92, 0, 0.75);
+}
+
+.temp-min {
+    background-color: rgba(0, 212, 255, 0.75);
+}
+
+.feels-like {
+    background-color: rgba(255, 242, 0, 0.75);
 }
 
 .wind {
-    background-color: #ffb400;
+    background-color: rgba(173, 245, 226, 0.75);
 }
 
 .humidity {
-    background-color: #ff0000;
+    background-color: rgba(0, 157, 255, 0.75);
 }
 
 .weather {
-    background-color: #00bcd4;
+    background-color: rgba(0, 188, 212, 0.75);
 }
 
 .coord {
-    background-color: #420a4f;
+    background-color: rgba(0, 216, 209,  0.75);
 }
 
 
@@ -155,4 +170,14 @@ form {
 
 .shake {
     animation: headShake 0.5s linear alternate;
+}
+
+.alert {
+    font-family: "Poppins";
+    color: red;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    margin: 4em auto;
 }
