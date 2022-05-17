@@ -15,19 +15,12 @@ body {
 }
 
 .content {
-    /*position: absolute;*/
-    /*top: 9.2em;*/
-    /*left: -10em;*/
-    /*height: 6em;*/
-    /*width: 26em;*/
     background: #373737;
-    /*margin-left: -0.5em;*/
     color: #ffffff;
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /*justify-content: space-around;*/
     z-index: 5;
     box-shadow: #0f1923 0 0 5px;
     max-width: fit-content;
