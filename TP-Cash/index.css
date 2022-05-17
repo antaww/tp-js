@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:700,300);
+
+
 html,
 body {
     width: 100vw;
@@ -134,4 +137,30 @@ button {
 
 .spinner.iso:hover{
     transform: perspective(3000px) rotateX(55deg) rotateZ(-40deg) translateZ(.5em);
+}
+
+.total {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    background: #ba54d8;
+    box-shadow: 0 0 0.1em 0.1em rgba(186, 84, 216, 0.85);
+    border-radius: 1ex;
+    margin: 1em;
+}
+
+.coins {
+    margin: 0.5em;
+    background: #853c9c;
+    box-shadow: 0 0 0.2em 0.2em rgba(133, 60, 156, 0.85);
+    border-radius: 10%;
+    font-family: Poppins, serif;
+}
+
+#coinLogo {
+    width: 2em;
+    height: 2em;
+    margin: 0.4em;
 }
