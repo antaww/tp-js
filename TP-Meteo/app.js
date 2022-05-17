@@ -32,6 +32,7 @@ window.addEventListener('keydown', function (e) {
             return;
         }
         CallAPI(cityName.value);
+        e.preventDefault();
     }
 });
 
