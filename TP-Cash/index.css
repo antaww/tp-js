@@ -54,6 +54,7 @@ body {
     border-width: 10px;
     border-style: solid;
     background: url("https://media.istockphoto.com/vectors/poker-table-background-in-green-color-vector-id1206505233?k=20&m=1206505233&s=612x612&w=0&h=QBYw3shQkcZG2g1qG8udx8nrUsqnPZNooSaLNIs5elo=");
+    background-size: cover;
 }
 
 .slots {
