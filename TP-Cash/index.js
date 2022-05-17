@@ -1,28 +1,60 @@
-let lemon = "🍋";
-let cherry = "🍒";
-let gem = "💎";
-let seven = "7️⃣";
+let doors = document.querySelectorAll('.door');
+let spin10 = document.querySelector('#spinner10');
+let spin50 = document.querySelector('#spinner50');
+let spin200 = document.querySelector('#spinner200');
+let reset = document.querySelector('#reseter');
+let coins = document.querySelector('.coins');
+let benefits = document.querySelector('.benefits');
 
-const items = [];
+const wallet = 500;
+const gain = 0;
 
-//Add each item to the array 2 times except for seven which is added 1 time
-for (let i = 0; i < 2; i++) {
-    items.push(lemon);
-    items.push(cherry);
-    items.push(gem);
+const items = [
+    "🍋",
+    "🍒",
+    "💎",
+    "🍋",
+    "🍒",
+    "💎",
+    "7️"
+]
+
+function Init(){
+    coins.innerHTML = wallet;
 }
-items.push(seven);
 
-document.querySelector(".info").textContent = items.join(" ");
+window.addEventListener('click', function(e){
+    if(e.target.id.includes('spinner')){
+        let i = e.target.id.substring(7);
+        console.log(i);
+    }
+});
 
-const doors = document.querySelectorAll(".door");
-document.querySelector("#spinner").addEventListener("click", spin);
 
-// async function spin() {
-//     for (const door of doors) {
-//         const boxes = door.querySelector(".boxes");
-//         const duration = parseInt(boxes.style.transitionDuration);
-//         boxes.style.transform = "translateY(0)";
-//         await new Promise((resolve) => setTimeout(resolve, duration * 100));
-//     }
-// }
+
+
+// Randomly select an item (the last item has a lower chance of being selected (50%))
+function shuffle([...arr]) {
+    let m = arr.length;
+    while (m) {
+        const i = Math.floor(Math.random() * m--);
+        [arr[m], arr[i]] = [arr[i], arr[m]];
+    }
+    return arr;
+}
+
+function SpinFunc() {
+
+    coins.innerHTML = wallet - 10;
+// Shuffle the items and assign them to the doors
+    let shuffledItems = shuffle(items);
+    for (let i = 0; i < doors.length; i++) {
+        doors[i].innerHTML = shuffledItems[i];
+
+    }
+}
+
+Init();
+
+
+
