@@ -58,8 +58,7 @@ body {
     display: flex;
     flex-direction: row;
     border-radius: 0.5ex;
-    margin: 2em;
-
+    margin: 0 2em;
 }
 
 .door {
