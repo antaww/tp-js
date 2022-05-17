@@ -169,22 +169,27 @@ button {
 
 .total {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     font-size: 1.5em;
     font-weight: bold;
-    background: #ba54d8;
-    box-shadow: 0 0 0.1em 0.1em rgba(186, 84, 216, 0.85);
+    border-image: linear-gradient(to bottom, goldenrod, gold, goldenrod) 1;
+    border-width: 10px;
+    border-style: solid;
+    background: url("https://static6.depositphotos.com/1107771/647/v/600/depositphotos_6476634-stock-illustration-red-poker-background.jpg");
     border-radius: 1ex;
     margin: 1em;
+    font-family: Poppins, serif;
+    width: fit-content;
 }
 
-.coins {
-    margin: 0.5em;
-    background: #853c9c;
-    box-shadow: 0 0 0.2em 0.2em rgba(133, 60, 156, 0.85) ;
+.content {
+    display: flex;
+    align-items: center;
+    margin: 0.2em;
     border-radius: 10%;
     font-family: Poppins, serif;
+    color: gold;
 }
 
 #coinLogo {
@@ -195,4 +200,11 @@ button {
 
 .heartBeat {
     animation: heartBeat .5s ease-in-out;
+}
+
+.coins {
+    margin: 0.3em;
+    border-radius: 10%;
+    font-family: Poppins, serif;
+    color: gold;
 }
