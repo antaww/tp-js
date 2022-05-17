@@ -1,6 +1,9 @@
 let doors = document.querySelectorAll('.door');
 let coins = document.querySelector('.coins');
 let benefits = document.querySelector('.benefits');
+let totalGainDiv = document.querySelector('.totalGain');
+let gainRoundDiv = document.querySelector('.gainRound');
+let coinsBetDiv = document.querySelector('.coinsBet');
 
 
 let wallet = 500;
@@ -44,12 +47,17 @@ function shuffle([...arr]) {
 }
 
 function SpinFunc(i) {
+    totalGainDiv.classList.remove('wobble');
+    gainRoundDiv.classList.remove('wobble');
+    coinsBetDiv.classList.remove('wobble');
     console.clear();
     doors.forEach(door => {
         door.innerHTML = '';
     });
     console.log("Wallet before spin : ", wallet);
     console.log("Coins bet : ", i);
+    coinsBetDiv.innerHTML = "Jetons misés : " + i;
+    coinsBetDiv.classList.add('wobble');
     if (wallet - i < 0) {
         console.log("You don't have enough money to play");
         for (let i = 0; i < doors.length; i++) {
@@ -92,9 +100,12 @@ function CalculateGain(i) {
 
     wallet += gain;
     console.log("Total gain : ", totalGain);
+    totalGainDiv.innerHTML = "Total gagné : " + totalGain;
+    totalGainDiv.classList.add('wobble');
     console.log("Gain this round : ", gain);
+    gainRoundDiv.innerHTML = "Gagné ce tour : " + gain;
+    gainRoundDiv.classList.add('wobble');
     coins.innerHTML = wallet;
-    benefits.innerHTML = totalGain;
     isSpinning = false;
 }
 

@@ -24,7 +24,6 @@ body {
 #app {
     width: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,7 +36,6 @@ body {
 .background {
     width: 100%;
     height: 100%;
-
     background: url("https://static.vecteezy.com/ti/vecteur-libre/p1/3810467-casino-publicite-neon-banniere-conception-avec-cartes-a-jouer-et-casino-chips-sur-fond-violet-vectoriel.jpg") no-repeat center;
     background-size: cover;
     filter: blur(8px);
@@ -49,11 +47,11 @@ body {
     flex-direction: column;
     align-items: center;
     border-radius: 0.5ex;
-
     border-image: linear-gradient(to bottom, goldenrod, gold, goldenrod) 1;
     border-width: 10px;
     border-style: solid;
     background: url("https://media.istockphoto.com/vectors/poker-table-background-in-green-color-vector-id1206505233?k=20&m=1206505233&s=612x612&w=0&h=QBYw3shQkcZG2g1qG8udx8nrUsqnPZNooSaLNIs5elo=");
+    background-size: cover;
 }
 
 .slots {
@@ -83,7 +81,6 @@ body {
 }
 
 .boxes {
-    /* transform: translateY(0); */
     transition: transform 1s ease-in-out;
     z-index: 1;
 }
@@ -92,7 +89,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
     font-size: 3rem;
 }
 
@@ -111,10 +107,8 @@ body {
 
 button {
     cursor: pointer;
-
     font-size: 1.2rem;
     text-transform: uppercase;
-
     margin: 0.1em 0.2rem 0 0.2rem;
 }
 
@@ -181,6 +175,7 @@ button {
     margin: 1em;
     font-family: Poppins, serif;
     width: fit-content;
+    z-index: 2;
 }
 
 .content {
@@ -207,4 +202,39 @@ button {
     border-radius: 10%;
     font-family: Poppins, serif;
     color: gold;
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    filter: drop-shadow(-10px -10px 75px #ff00ff);
+
+}
+
+.multipliers {
+    background: url('https://treehouse-code-samples.s3.amazonaws.com/CSS-DD/codepen/stage-7/bg.png');
+    display: flex;
+    flex-flow: column;
+    padding: 20px;
+    border-image: linear-gradient(to bottom, goldenrod, gold, goldenrod) 1;
+    border-width: 10px;
+    border-style: solid;
+    margin: 20px;
+    font-family: Poppins, serif;
+    font-weight: bold;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #fafafa;
+}
+
+.wobble {
+    animation: wobble 1s;
 }
