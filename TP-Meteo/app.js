@@ -31,7 +31,6 @@ window.addEventListener('keydown', function (e) {
             return;
         }
         CallAPI(cityName.value);
-        console.log('ENTER key pressed');
         e.preventDefault();
     }
 });
@@ -39,6 +38,7 @@ window.addEventListener('keydown', function (e) {
 
 function CallAPI(cityName) {
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKEY}&units=metric&lang=fr`;
+    // error 404
     let city = document.querySelector('.city');
     let wind = document.querySelector('.wind');
     let humidity = document.querySelector('.humidity');
@@ -51,34 +51,44 @@ function CallAPI(cityName) {
     let tempMin = document.querySelector('.temp-min');
     let tempMax = document.querySelector('.temp-max');
 
-    // display content
-    content[0].style.display = 'flex';
+    // error 404
+    let alert = document.querySelector('.alert');
+
     fetch(url).then(response => response.json()).then(data => {
-        console.log(data);
-        city.innerHTML = "Météo de \n " + data.name;
-        if (data.main.temp > 21) {
-            temp.innerHTML = "Température actuelle<i class=\"fa-solid fa-temperature-high\"></i>" + data.main.temp + "°C";
-            // change background color
-            temp.style.backgroundColor = 'rgba(242,41,41,0.75)';
-        } else if (data.main.temp < 10) {
-            temp.innerHTML = "Température actuelle<i class=\"fa-solid fa-temperature-low\"></i>" + data.main.temp + "°C";
-            temp.style.backgroundColor = 'rgba(41,225,242,0.75)';
+        if (data.cod === '404') {
+            // display alert
+            alert.style.display = 'flex';
+            // hide content
+            content[0].style.display = 'none';
         } else {
-            temp.innerHTML = "Température actuelle<i class=\"fa-solid fa-temperature-half\"></i>" + data.main.temp + "°C";
-            temp.style.backgroundColor = 'rgba(255,180,0,0.75)';
+            content[0].style.display = 'flex';
+            alert.style.display = 'none';
+            console.log(data);
+            city.innerHTML = "Météo de \n " + data.name;
+            if (data.main.temp > 21) {
+                temp.innerHTML = "Température actuelle<i class=\"fa-solid fa-temperature-high\"></i>" + data.main.temp + "°C";
+                // change background color
+                temp.style.backgroundColor = 'rgba(242,41,41,0.75)';
+            } else if (data.main.temp < 10) {
+                temp.innerHTML = "Température actuelle<i class=\"fa-solid fa-temperature-low\"></i>" + data.main.temp + "°C";
+                temp.style.backgroundColor = 'rgba(41,225,242,0.75)';
+            } else {
+                temp.innerHTML = "Température actuelle<i class=\"fa-solid fa-temperature-half\"></i>" + data.main.temp + "°C";
+                temp.style.backgroundColor = 'rgba(255,180,0,0.75)';
+            }
+            wind.innerHTML = "<i class='fa-solid fa-wind'></i>" + data.wind.speed + " m/s";
+            humidity.innerHTML = "<i class='fa-solid fa-droplet'></i>" + data.main.humidity + " %";
+            meteo_description = data.weather[0].description;
+            meteo_description = meteo_description.charAt(0).toUpperCase() + meteo_description.slice(1);
+            meteo_icon = data.weather[0].icon;
+            //round to 2 numbers after the decimal
+
+
+            weather.innerHTML = "<img src='http://openweathermap.org/img/wn/" + meteo_icon + "@2x.png'>" + meteo_description;
+            coord.innerHTML = "Latitude " + Math.round(data.coord.lat * 100) / 100 + "° Longitude " + Math.round(data.coord.lon * 100) / 100 + "°";
+            feelsLike.innerHTML = "Température ressenti <i class=\"fa-solid fa-temperature-high\"></i>" + data.main.feels_like + "°C";
+            tempMin.innerHTML = "Température la plus froide<i class=\"fa-solid fa-temperature-arrow-down\"></i>" + data.main.temp_min + "°C";
+            tempMax.innerHTML = "Température la plus chaude<i class=\"fa-solid fa-temperature-arrow-up\"></i>" + data.main.temp_max + "°C";
         }
-        wind.innerHTML = "<i class='fa-solid fa-wind'></i>" + data.wind.speed + " m/s";
-        humidity.innerHTML = "<i class='fa-solid fa-droplet'></i>" + data.main.humidity + " %";
-        meteo_description = data.weather[0].description;
-        meteo_description = meteo_description.charAt(0).toUpperCase() + meteo_description.slice(1);
-        meteo_icon = data.weather[0].icon;
-        //round to 2 numbers after the decimal
-
-
-        weather.innerHTML = "<img src='http://openweathermap.org/img/wn/" + meteo_icon + "@2x.png'>" + meteo_description;
-        coord.innerHTML = "Latitude " + Math.round(data.coord.lat*100)/100 + "° Longitude " + Math.round(data.coord.lon*100)/100 + "°";
-        feelsLike.innerHTML = "Température ressenti <i class=\"fa-solid fa-temperature-high\"></i>" + data.main.feels_like + "°C";
-        tempMin.innerHTML = "Température la plus froide<i class=\"fa-solid fa-temperature-arrow-down\"></i>" + data.main.temp_min + "°C";
-        tempMax.innerHTML = "Température la plus chaude<i class=\"fa-solid fa-temperature-arrow-up\"></i>" + data.main.temp_max + "°C";
     });
 }

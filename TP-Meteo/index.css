@@ -171,3 +171,13 @@ form {
 .shake {
     animation: headShake 0.5s linear alternate;
 }
+
+.alert {
+    font-family: "Poppins";
+    color: red;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    margin: 4em auto;
+}
