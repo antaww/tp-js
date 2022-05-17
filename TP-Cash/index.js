@@ -6,8 +6,9 @@ let reset = document.querySelector('#reseter');
 let coins = document.querySelector('.coins');
 let benefits = document.querySelector('.benefits');
 
-const wallet = 500;
-const gain = 0;
+
+let wallet = 500;
+let gain = 0;
 
 const items = [
     "🍋",
@@ -26,7 +27,7 @@ function Init(){
 window.addEventListener('click', function(e){
     if(e.target.id.includes('spinner')){
         let i = e.target.id.substring(7);
-        console.log(i);
+        SpinFunc(i);
     }
 });
 
@@ -43,9 +44,9 @@ function shuffle([...arr]) {
     return arr;
 }
 
-function SpinFunc() {
-
-    coins.innerHTML = wallet - 10;
+function SpinFunc(i) {
+    wallet -= i;
+    coins.innerHTML = wallet;
 // Shuffle the items and assign them to the doors
     let shuffledItems = shuffle(items);
     for (let i = 0; i < doors.length; i++) {
