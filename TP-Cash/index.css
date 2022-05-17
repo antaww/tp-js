@@ -46,11 +46,26 @@ body {
 
 .doors {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.5ex;
+
+    border: goldenrod solid 10px;
+    background: green;
+}
+
+.slots {
+    display: flex;
+    flex-direction: row;
+    border-radius: 0.5ex;
+
 }
 
 .door {
     background: #fafafa;
     box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4) inset;
+    border: goldenrod solid 10px;
+
 
     width: 100px;
     height: 150px;
@@ -72,6 +87,14 @@ body {
     align-items: center;
 
     font-size: 3rem;
+}
+
+.name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fafafa;
+    text-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4) inset;
 }
 
 .buttons {
@@ -154,7 +177,7 @@ button {
 .coins {
     margin: 0.5em;
     background: #853c9c;
-    box-shadow: 0 0 0.2em 0.2em rgba(133, 60, 156, 0.85);
+    box-shadow: 0 0 0.2em 0.2em rgba(133, 60, 156, 0.85) ;
     border-radius: 10%;
     font-family: Poppins, serif;
 }
