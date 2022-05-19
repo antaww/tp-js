@@ -38,7 +38,7 @@ body {
     height: 100%;
     background: url("https://static.vecteezy.com/ti/vecteur-libre/p1/3810467-casino-publicite-neon-banniere-conception-avec-cartes-a-jouer-et-casino-chips-sur-fond-violet-vectoriel.jpg") no-repeat center;
     background-size: cover;
-    filter: blur(8px);
+    filter: blur(2px);
     z-index: -1;
 }
 
@@ -226,6 +226,7 @@ button {
 }
 
 .stats {
+    min-width: 100%;
     display: flex;
     justify-content: space-evenly;
     width: 100%;

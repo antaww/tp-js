@@ -14,18 +14,24 @@ let isSpinning = false;
 
 const items = [
     "🍋",
+    "🍋",
+    "🍒",
     "🍒",
     "💎",
+    "💎",
     "🍋",
+    "🍒",
     "🍒",
     "💎",
     "7️"
 ]
 
+/* It's initializing the game by setting the wallet to 500. */
 function Init() {
     coins.innerHTML = wallet;
 }
 
+/* It's listening for a click on the buttons and calling the SpinFunc function with the value of the button as a parameter. */
 window.addEventListener('click', function (e) {
     if (e.target.id.includes('spinner')) {
         let i = e.target.id.substring(7);
@@ -37,6 +43,7 @@ window.addEventListener('click', function (e) {
 });
 
 
+/* It's shuffling the array. */
 function shuffle([...arr]) {
     let m = arr.length;
     while (m) {
@@ -46,6 +53,7 @@ function shuffle([...arr]) {
     return arr;
 }
 
+/* It's listening for a click on the buttons and calling the SpinFunc function with the value of the button as a parameter. */
 function SpinFunc(i) {
     totalGainDiv.classList.remove('wobble');
     gainRoundDiv.classList.remove('wobble');
@@ -86,6 +94,7 @@ function SpinFunc(i) {
     }, doors.length * 500);
 }
 
+/* It's calculating the gain of the round. */
 function CalculateGain(i) {
     result = [];
     let gain = 0;
@@ -113,6 +122,8 @@ Init();
 
 // COINS MULTIPLIER FUNCTIONS //
 
+/* It's checking if there is a 7️ in the result array. If there is, it's counting how many 7️ there is. If there is 3, it's
+adding the value of the bet to the total gain and the gain of the round. */
 function sevenCheck(i, gain) {
     if (result.includes("7️")) {
         let sevenCount = result.filter(x => x === "7️").length;
@@ -125,6 +136,8 @@ function sevenCheck(i, gain) {
     return gain;
 }
 
+/* It's checking if there is a 💎 in the result array. If there is, it's counting how many 💎 there is. If there is 1, it's
+adding the value of the bet to the total gain and the gain of the round. */
 function gemCheck(i, gain) {
     if (result.includes("💎")) {
         let gemCount = result.filter(x => x === "💎").length;
@@ -143,6 +156,8 @@ function gemCheck(i, gain) {
     return gain;
 }
 
+/* It's checking if there is a 🍋 in the result array. If there is, it's counting how many 🍋 there is. If there is 3, it's
+adding the value of the bet to the total gain and the gain of the round. */
 function lemonCheck(i, gain) {
     if (result.includes("🍋")) {
         let lemonCount = result.filter(x => x === "🍋").length;
@@ -153,6 +168,8 @@ function lemonCheck(i, gain) {
         }
     }
     return gain;
+/* It's checking if there is a 🍒 in the result array. If there is, it's counting how many 🍒 there is. If there is 3, it's
+adding the value of the bet to the total gain and the gain of the round. */
 }
 
 function cherryCheck(i, gain) {

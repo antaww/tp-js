@@ -9,6 +9,7 @@ var pos = 0;
 var nbSlide = imgs.length;
 
 
+/* Listening for the keydown event and if the key is ArrowLeft or ArrowRight it will call the previousFunc or nextFunc. */
 window.addEventListener("keydown", event => {
     if (event.key == "ArrowLeft") {
         previousFunc()
@@ -17,6 +18,10 @@ window.addEventListener("keydown", event => {
     }
 })
 
+/**
+ * It moves the slider to the left by 100vw, and if the slider is at the beginning of the list, it moves it to the end of
+ * the list
+ */
 function previousFunc() {
     for (let i = 0; i < summary_li.length; i++) {
         summary_li[i].classList.remove('selected');
@@ -38,10 +43,16 @@ function previousFunc() {
     }
 }
 
+/* Adding an event listener to the previous button. When the button is clicked, it will call the previousFunc function. */
 prev.addEventListener('click', () => {
     previousFunc();
 })
 
+/**
+ * It moves the slider to the left by 100vw, and if the slider is at the end of the slides, it moves it back to the
+ * beginning
+ * @param e - the event object
+ */
 function nextFunc(e) {
     for (let i = 0; i < summary_li.length; i++) {
         summary_li[i].classList.remove('selected');
@@ -62,10 +73,12 @@ function nextFunc(e) {
     }
 }
 
+/* Adding an event listener to the next button. When the button is clicked, it will call the nextFunc function. */
 next.addEventListener('click', (e) => {
     nextFunc(e);
 })
 
+/* Creating a list of dots that will be used to navigate through the slides. */
 for (let i = 0; i < nbSlide; i++) {
     let li = document.createElement('li');
     li.setAttribute('data-index', i);
@@ -73,6 +86,8 @@ for (let i = 0; i < nbSlide; i++) {
     summary_ul.appendChild(li);
 }
 
+/* Adding an event listener to each dot. When the dot is clicked, it will remove the selected class from all the dots and
+add it to the clicked dot. It will also move the slider to the slide that corresponds to the dot. */
 for (let i = 0; i < summary_li.length; i++) {
 
     if (i === 0) {
