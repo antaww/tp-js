@@ -37,6 +37,11 @@ window.addEventListener('keydown', function (e) {
 });
 
 
+/**
+ * It takes a city name as a parameter, then it uses the Fetch API to make a request to the OpenWeatherMap API, then it
+ * displays the data in the HTML
+ * @param cityName - The name of the city you want to get the weather for.
+ */
 function CallAPI(cityName) {
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKEY}&units=metric&lang=fr`;
     // error 404
