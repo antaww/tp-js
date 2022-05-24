@@ -1,4 +1,5 @@
 let addItemToCart = document.querySelectorAll('.add-to-cart');
+let removeItemFromCart = document.querySelectorAll('.remove-from-cart');
 
 let items = {
     item1: {
@@ -81,6 +82,9 @@ let items = {
 };
 
 window.addEventListener('load', addItemToHTML);
+window.addEventListener('click', function (e) {
+    console.log(e.target);
+});
 
 function addItemToHTML() {
     for (let key in items) {
@@ -93,6 +97,7 @@ function addItemToHTML() {
         <div class="name">${items[key].name}</div>
         <div class="price">$${items[key].price}</div>
         <i class="fas fa-plus add-to-cart"></i>
+        <i class="fas fa-minus remove-from-cart"></i>
     </div>
     `;
         document.querySelector('.container').innerHTML += itemHTML;
@@ -109,6 +114,24 @@ addItemToCart.forEach(function (item) {
             let quantity = localStorage.getItem(itemId);
             quantity++;
             localStorage.setItem(itemId, quantity);
+        }
+        let itemPrice = parseFloat(item.parentElement.dataset.itemPrice);
+        itemPrice = itemPrice.toFixed(2);
+        let totalPriceItem = localStorage.getItem(itemId) * itemPrice;
+        totalPriceItem = totalPriceItem.toFixed(2);
+        console.log(totalPriceItem);
+    })
+})
+
+removeItemFromCart.forEach(function (item) {
+    item.addEventListener('click', function () {
+        let itemId = item.parentElement.getAttribute('id')
+        let quantity = localStorage.getItem(itemId);
+        if (quantity > 1) {
+            quantity--;
+            localStorage.setItem(itemId, quantity);
+        } else {
+            localStorage.removeItem(itemId);
         }
         let itemPrice = parseFloat(item.parentElement.dataset.itemPrice);
         itemPrice = itemPrice.toFixed(2);
