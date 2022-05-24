@@ -1,5 +1,11 @@
+@font-face {
+    font-family: OnePiece;
+    src: url(OnePieceFont.ttf);
+}
+
 * {
     margin: 0;
+    font-family: OnePiece;
 }
 
 .item {
@@ -37,4 +43,136 @@
 
 .firstImg:hover {
     display: none;
+}
+
+
+/* Cart */
+h1 {
+    font-size: 50px;
+    text-align: center;
+    margin: 50px;
+}
+
+.cart {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+}
+
+
+.cart-header {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 50px;
+    background-color: #f2f2f2;
+}
+
+.cart-header-item {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100%;
+    background-color: #f2f2f2;
+}
+
+.cart-header-item:hover {
+    background-color: #e6e6e6;
+}
+
+.cart-header p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.cart-body {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100% - 50px);
+    background-color: #f2f2f2;
+    margin-top: 75px;
+}
+
+.cart-body-item {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 50px;
+    background-color: #f2f2f2;
+}
+
+
+.cart-body-item:hover {
+    background-color: #e6e6e6;
+}
+
+.cart-body-item-img {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100%;
+    background-color: #f2f2f2;
+}
+
+.cart-body-item-img img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.cart-footer {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    background-color: #f2f2f2;
+}
+
+.cart-footer:hover {
+    background-color: #e6e6e6;
+}
+
+.cart-footer-item {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100%;
+}
+
+.cart-footer-item p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.emptyCart {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+}
+
+.emptyCart p {
+    font-size: 30px;
+    margin-top: 50px;
 }
