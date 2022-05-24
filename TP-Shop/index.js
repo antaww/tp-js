@@ -1,6 +1,3 @@
-let addItemToCart = document.querySelectorAll('.add-to-cart');
-let removeItemFromCart = document.querySelectorAll('.remove-from-cart');
-
 let items = {
     item1: {
         id: 0,
@@ -83,6 +80,23 @@ let items = {
 
 window.addEventListener('load', addItemToHTML);
 
+
+window.addEventListener('click', function (e) {
+    if (e.target.classList.contains('add-to-cart')) {
+        addToCart(e.target.parentNode);
+    } else if (e.target.classList.contains('remove-from-cart')) {
+        removeFromCart(e.target.parentNode);
+    }
+});
+
+
+//
+// FUNCTIONS
+//
+
+/**
+ * It loops through the items object and adds each item to the HTML
+ */
 function addItemToHTML() {
     for (let key in items) {
         let itemHTML = `
@@ -102,38 +116,69 @@ function addItemToHTML() {
 }
 
 
-addItemToCart.forEach(function (item) {
-    item.addEventListener('click', function () {
-        let itemId = item.parentElement.getAttribute('id')
-        if (localStorage.getItem(itemId) === null) {
-            localStorage.setItem(itemId, "1");
-        } else {
-            let quantity = localStorage.getItem(itemId);
-            quantity++;
-            localStorage.setItem(itemId, quantity);
-        }
-        let itemPrice = parseFloat(item.parentElement.dataset.itemPrice);
-        itemPrice = itemPrice.toFixed(2);
-        let totalPriceItem = localStorage.getItem(itemId) * itemPrice;
-        totalPriceItem = totalPriceItem.toFixed(2);
-        console.log(totalPriceItem);
-    })
-})
+/**
+ * The function takes in an item, gets the item's id, checks if the item is in the cart, if it is, it increments the
+ * quantity, if it isn't, it adds it to the cart, then it gets the item's price, multiplies it by the quantity, and stores
+ * it in the cart
+ * @param item - the button that was clicked
+ */
+function addToCart(item) {
+    let itemId = item.getAttribute('id');
+    if (localStorage.getItem(itemId + '-quantity') === null) {
+        localStorage.setItem(itemId + '-quantity', "1");
+    } else {
+        let quantity = localStorage.getItem(itemId + '-quantity');
+        quantity++;
+        localStorage.setItem(itemId + '-quantity', quantity);
+    }
+    updateCart(item, itemId);
+}
 
-removeItemFromCart.forEach(function (item) {
-    item.addEventListener('click', function () {
-        let itemId = item.parentElement.getAttribute('id')
-        let quantity = localStorage.getItem(itemId);
-        if (quantity > 1) {
-            quantity--;
-            localStorage.setItem(itemId, quantity);
-        } else {
-            localStorage.removeItem(itemId);
+/**
+ * The function removes an item from the cart by decreasing the quantity of the item in the local storage by one. If the
+ * quantity is one, the item is removed from the local storage
+ * @param item - the item that was clicked on
+ */
+function removeFromCart(item) {
+    let itemId = item.getAttribute('id')
+    let quantity = localStorage.getItem(itemId + '-quantity');
+    if (quantity > 1) {
+        quantity--;
+        localStorage.setItem(itemId + '-quantity', quantity);
+    } else {
+        localStorage.removeItem(itemId + '-quantity');
+        localStorage.removeItem(itemId + '-totalPrice');
+        localStorage.removeItem('total');
+    }
+    updateCart(item, itemId);
+}
+
+/**
+ * It loops through all the items in localStorage, and if the key contains '-totalPrice', it adds the value to the total
+ * @returns The total price of all items in the cart.
+ */
+function getTotal() {
+    let total = 0;
+    for (let i = 0; i < localStorage.length; i++) {
+        let key = localStorage.key(i);
+        if (key.includes('-totalPrice')) {
+            total += parseFloat(localStorage.getItem(key));
         }
-        let itemPrice = parseFloat(item.parentElement.dataset.itemPrice);
-        itemPrice = itemPrice.toFixed(2);
-        let totalPriceItem = localStorage.getItem(itemId) * itemPrice;
-        totalPriceItem = totalPriceItem.toFixed(2);
-        console.log(totalPriceItem);
-    })
-})
+    }
+    return total.toString();
+}
+
+/**
+ * It updates the total price of an item in the cart
+ * @param item - the item that was clicked
+ * @param itemId - the id of the item
+ */
+function updateCart(item, itemId) {
+    let itemPrice = parseFloat(item.dataset.itemPrice);
+    itemPrice = itemPrice.toFixed(2);
+    let totalPriceItem = localStorage.getItem(itemId + '-quantity') * itemPrice;
+    totalPriceItem = totalPriceItem.toFixed(2);
+    localStorage.setItem(itemId + '-totalPrice', totalPriceItem);
+    localStorage.setItem('total', getTotal());
+    console.log(totalPriceItem);
+}
