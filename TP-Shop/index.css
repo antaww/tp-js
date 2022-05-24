@@ -21,4 +21,5 @@
 .firstImg {
     width: inherit;
     height: 80%;
+    object-fit: cover;
 }
