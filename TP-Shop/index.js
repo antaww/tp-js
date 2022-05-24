@@ -12,9 +12,6 @@ let items = {
 };
 
 window.addEventListener('load', addItemToHTML);
-window.addEventListener('click', function (e) {
-    console.log(e.target);
-});
 
 function addItemToHTML() {
     for (let key in items) {
