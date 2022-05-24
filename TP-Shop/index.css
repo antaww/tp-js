@@ -1,0 +1,20 @@
+.item {
+    display: flex;
+    width: 400px;
+    height: 500px;
+    flex-flow: column;
+    align-items: center;
+    border: 2px black solid;
+    padding: 8px;
+    margin: 10px;
+}
+
+.container {
+    display: flex;
+    flex-flow: row;
+}
+
+.firstImg {
+    width: inherit;
+    height: fit-content;
+}
