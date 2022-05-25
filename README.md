@@ -5,4 +5,4 @@ JavaScript exercices\
 4 - Weather\
 5 - Slot machine\
 6 - Shop\
-7 - Game\
+7 - Game
