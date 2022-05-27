@@ -188,3 +188,32 @@ h1 {
 .emptyCart:hover {
     cursor: pointer;
 }
+
+.button {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    transition: all 0.3s;
+    margin: 30px auto;
+}
+
+
+button {
+    border: none;
+    background-color: rgba(255, 242, 0, 0);
+    color: white;
+    font-size: 1.5em;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background-color: rgba(255, 165, 0, 0.68);
+    cursor: pointer;
+}
