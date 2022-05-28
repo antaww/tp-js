@@ -88,6 +88,8 @@ window.addEventListener('click', function (e) {
         addToCart(e.target.parentNode);
     } else if (e.target.classList.contains('remove-from-cart')) {
         removeFromCart(e.target.parentNode);
+    } else if (e.target.classList.contains('emptyCartBtn')) {
+        emptyCart();
     }
 });
 
@@ -119,20 +121,37 @@ function addItemToHTML() {
     }
 }
 
+function hideCartHTML() {
+    let emptyCartHTML = `
+        <h1>Your cart is empty</h1>
+    `;
+    document.querySelector('.cart').innerHTML += emptyCartHTML;
+    document.querySelector('.cart-body').style.display = 'none';
+    document.querySelector('.cart-footer').style.display = 'none';
+    document.querySelector('.emptyCart').style.display = 'none';
+}
+
 function addItemToCartHTML() {
     if (document.title === 'Cart') {
         console.log('cart');
-        for (let key in items) {
-            let itemId = items[key].id;
-            if (localStorage.getItem(itemId + '-quantity')) {
-                let totalItemPrice = localStorage.getItem(itemId + '-totalPrice');
-                let totalItemPriceDecimal = totalItemPrice.toString().split('.')[1];
-                if (totalItemPriceDecimal.length === 1) {
-                    totalItemPrice += '0';
-                }
-                let cartItemHTML = `
+        if (localStorage.length === 0) {
+            hideCartHTML();
+        } else {
+            document.querySelector('.cart-body').style.display = 'flex';
+            document.querySelector('.cart-footer').style.display = 'flex';
+            document.querySelector('.emptyCart').style.display = 'flex';
+            for (let key in items) {
+                let itemId = items[key].id;
+                if (localStorage.getItem(itemId + '-quantity')) {
+                    let totalItemPrice = localStorage.getItem(itemId + '-totalPrice');
+                    let totalItemPriceDecimal = totalItemPrice.toString().split('.')[1];
+                    if (totalItemPriceDecimal.length === 1) {
+                        totalItemPrice += '0';
+                    }
+                    let cartItemHTML = `
             <div class="cart-body-product">
                 <div class="cart-body-item">
+                    <img class="productImg" src="${items[key].img3}" alt="">
                     <p>${items[key].name}</p>
                 </div>
                 <div class="cart-body-item">
@@ -144,9 +163,10 @@ function addItemToCartHTML() {
                 <div class="cart-body-item">
                     <p>$${totalItemPrice}</p>
                 </div>
-        </div>
-        `;
-                document.querySelector('.cart-body').innerHTML += cartItemHTML;
+            </div>
+            `;
+                    document.querySelector('.cart-body').innerHTML += cartItemHTML;
+                }
             }
         }
     }
@@ -242,4 +262,9 @@ function updateCart() {
     if (localStorage.getItem('total') === '0') {
         localStorage.removeItem('total');
     }
+}
+
+function emptyCart() {
+    localStorage.clear();
+    hideCartHTML();
 }
