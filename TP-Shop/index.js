@@ -105,9 +105,9 @@ function addItemToHTML() {
             let itemHTML = `
     <div class="item" id="${items[key].id}" data-item-price="${items[key].price}">
         <img class="firstImg"
-             src="${items[key].img1}">
+             src="${items[key].img1}" alt="">
         <img class="secondImg"
-                src="${items[key].img2}">
+                src="${items[key].img2}" alt="">
         <div class="name">${items[key].name}</div>
         <div class="price">$${items[key].price}</div>
         <i class="fas fa-plus add-to-cart"></i>

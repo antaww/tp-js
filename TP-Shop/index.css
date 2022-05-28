@@ -35,6 +35,7 @@ body {
 }
 
 .firstImg {
+    display: block;
     width: inherit;
     height: 80%;
     object-fit: cover;
@@ -45,14 +46,6 @@ body {
     width: inherit;
     height: 80%;
     object-fit: cover;
-}
-
-.firstImg:hover + .secondImg {
-    display: block;
-}
-
-.firstImg:hover {
-    display: none;
 }
 
 
