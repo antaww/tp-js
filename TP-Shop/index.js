@@ -5,6 +5,7 @@ let items = {
         price: '597.44',
         img1: 'https://www.tsume-art.com/storage/app/uploads/public/b3f/cb8/589/thumb__1440x0_0_0_crop.jpg',
         img2: 'https://www.tsume-art.com/storage/app/uploads/public/911/555/444/thumb__660x920_0_0_crop.jpg',
+        img3: 'https://optc-db.github.io/api/images/full/transparent/1/800/1816.png',
     },
     item2: {
         id: 1,
@@ -12,6 +13,7 @@ let items = {
         price: '2135.90',
         img1: 'https://www.tsume-art.com/storage/app/uploads/public/5b4/85f/f9b/thumb__1440x0_0_0_crop.jpg',
         img2: 'https://www.tsume-art.com/storage/app/uploads/public/8ac/541/91b/thumb__660x920_0_0_crop.jpg',
+        img3: 'https://optc-db.github.io/api/images/full/transparent/3/100/3154.png',
     },
     item3: {
         id: 2,
@@ -19,6 +21,8 @@ let items = {
         price: '332.48',
         img1: 'https://www.tsume-art.com/storage/app/uploads/public/0fa/109/6f9/thumb__0x752_0_0_crop.jpg',
         img2: 'https://www.tsume-art.com/storage/app/uploads/public/2bd/67c/39b/thumb__0x752_0_0_crop.jpg',
+        img3: 'https://optc-db.github.io/api/images/full/transparent/3/500/3592.png',
+
     },
     item4: {
         id: 3,
@@ -26,6 +30,8 @@ let items = {
         price: '315.38',
         img1: 'https://www.tsume-art.com/storage/app/uploads/public/bf4/22b/a08/thumb__0x752_0_0_crop.jpg',
         img2: 'https://www.tsume-art.com/storage/app/uploads/public/99f/78d/9b5/thumb__660x920_0_0_crop.jpg',
+        img3: 'https://optc-db.github.io/api/images/full/transparent/3/000/3082.png',
+
     },
     item5: {
         id: 4,
@@ -33,6 +39,8 @@ let items = {
         price: '341.03',
         img1: 'https://www.tsume-art.com/storage/app/uploads/public/689/e82/b09/thumb__0x752_0_0_crop.jpg',
         img2: 'https://www.tsume-art.com/storage/app/uploads/public/aba/621/1d4/thumb__660x920_0_0_crop.jpg',
+        img3: 'https://optc-db.github.io/api/images/full/transparent/3/100/3175.png',
+
     },
     item6: {
         id: 5,
@@ -40,6 +48,8 @@ let items = {
         price: '289.74',
         img1: 'https://www.tsume-art.com/storage/app/uploads/public/c9d/280/25e/thumb__0x752_0_0_crop.jpg',
         img2: 'https://www.tsume-art.com/storage/app/uploads/public/5a9/79d/34b/thumb__660x920_0_0_crop.jpg',
+        img3: 'https://optc-db.github.io/api/images/full/transparent/3/200/3225.png',
+
     },
     item7: {
         id: 6,
@@ -47,6 +57,8 @@ let items = {
         price: '682.91',
         img1: 'https://www.tsume-art.com/storage/app/uploads/public/7ec/5c0/20d/thumb__0x752_0_0_crop.jpg',
         img2: 'https://www.tsume-art.com/storage/app/uploads/public/836/dd0/aac/thumb__660x920_0_0_crop.jpg',
+        img3: 'https://optc-db.github.io/api/images/full/transparent/2/000/2007.png',
+
     },
     item8: {
         id: 7,
@@ -54,6 +66,8 @@ let items = {
         price: '315.38',
         img1: 'https://www.tsume-art.com/storage/app/uploads/public/8cf/6f0/e2c/thumb__0x752_0_0_crop.jpg',
         img2: 'https://www.tsume-art.com/storage/app/uploads/public/b36/9f3/271/thumb__660x920_0_0_crop.jpg',
+        img3: 'https://optc-db.github.io/api/images/full/transparent/1/500/1540.png',
+
     },
     item9: {
         id: 8,
@@ -61,6 +75,8 @@ let items = {
         price: '768.38',
         img1: 'https://www.tsume-art.com/storage/app/uploads/public/875/794/700/thumb__0x752_0_0_crop.jpg',
         img2: 'https://www.tsume-art.com/storage/app/uploads/public/1dc/be5/86d/thumb__660x920_0_0_crop.jpg',
+        img3: 'https://optc-db.github.io/api/images/full/transparent/0/800/0865.png',
+
     },
     item10: {
         id: 9,
@@ -68,6 +84,8 @@ let items = {
         price: '640.17',
         img1: 'https://www.tsume-art.com/storage/app/uploads/public/fb4/67e/183/thumb__0x752_0_0_crop.jpg',
         img2: 'https://www.tsume-art.com/storage/app/uploads/public/9eb/cc3/cb2/thumb__660x920_0_0_crop.jpg',
+        img3: 'https://optc-db.github.io/api/images/full/transparent/0/200/0249.png',
+
     },
     item11: {
         id: 10,
@@ -75,6 +93,8 @@ let items = {
         price: '682.91',
         img1: 'https://www.tsume-art.com/storage/app/uploads/public/cd1/575/8ed/thumb__0x752_0_0_crop.jpg',
         img2: 'https://www.tsume-art.com/storage/app/uploads/public/f25/b34/81a/thumb__660x920_0_0_crop.jpg',
+        img3: 'https://optc-db.github.io/api/images/full/transparent/2/300/2336.png',
+
     },
 };
 
