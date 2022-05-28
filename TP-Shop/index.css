@@ -17,10 +17,10 @@ body {
 
 .item {
     display: flex;
-    width: 400px;
-    height: 500px;
     flex-flow: column;
     align-items: center;
+    width: 400px;
+    height: 500px;
     padding: 8px;
     margin: 10px;
     background-color: rgba(232, 213, 187, 0.83);
@@ -216,5 +216,6 @@ button {
 
 button:hover {
     background-color: rgba(255, 165, 0, 0.68);
+    box-shadow: 0 0 25px rgba(255, 165, 0, 0.59);
     cursor: pointer;
 }
