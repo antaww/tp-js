@@ -48,6 +48,12 @@ body {
     object-fit: cover;
 }
 
+.seeCart {
+    position: fixed;
+    top: -10px;
+    right: 25px;
+}
+
 
 /* Cart */
 
@@ -135,9 +141,6 @@ h1 {
     transition: all 0.3s;
 }
 
-.cart-body-item:hover {
-    background-color: rgba(255, 242, 0, 0.46);
-}
 
 .productImg {
     width: 35%;
@@ -200,13 +203,14 @@ h1 {
 
 button {
     border: none;
-    background-color: rgba(255, 242, 0, 0);
     color: white;
     font-size: 1.5em;
     padding: 10px;
     margin: 10px auto;
     border-radius: 25px;
     transition: all 0.3s;
+    background-color: rgba(0, 0, 0, 0.27);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.59);
 }
 
 button:hover {
@@ -223,4 +227,10 @@ button:hover {
 
 .add-to-cart:hover, .remove-from-cart:hover, .emptyCartBtn:hover {
     cursor: pointer;
+    transform: translateY(-3px);
+}
+
+.add-to-cart, .remove-from-cart, .emptyCartBtn {
+    font-size: 1.5em;
+    transition: all 0.3s;
 }

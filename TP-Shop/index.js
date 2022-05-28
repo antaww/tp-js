@@ -105,9 +105,9 @@ window.addEventListener('load', addFooterToCartHTML);
 
 window.addEventListener('click', function (e) {
     if (e.target.classList.contains('add-to-cart')) {
-        addToCart(e.target.parentNode);
+        addToCart(e.target.parentNode.parentNode);
     } else if (e.target.classList.contains('remove-from-cart')) {
-        removeFromCart(e.target.parentNode);
+        removeFromCart(e.target.parentNode.parentNode);
     } else if (e.target.classList.contains('emptyCartBtn')) {
         emptyCart();
     }
@@ -132,8 +132,10 @@ function addItemToHTML() {
                 src="${items[key].img2}" alt="">
         <div class="name">${items[key].name}</div>
         <div class="price">$${items[key].price}</div>
-        <i class="fas fa-plus add-to-cart"></i>
-        <i class="fas fa-minus remove-from-cart"></i>
+        <div class="plus-minus-container">
+            <i class="fas fa-plus add-to-cart"></i>
+            <i class="fas fa-minus remove-from-cart"></i>
+        </div>
     </div>
     `;
             document.querySelector('.container').innerHTML += itemHTML;
