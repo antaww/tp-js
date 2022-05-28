@@ -79,6 +79,8 @@ let items = {
 };
 
 window.addEventListener('load', addItemToHTML);
+window.addEventListener('load', addItemToCartHTML);
+window.addEventListener('load', addFooterToCartHTML);
 
 
 window.addEventListener('click', function (e) {
@@ -98,8 +100,9 @@ window.addEventListener('click', function (e) {
  * It loops through the items object and adds each item to the HTML
  */
 function addItemToHTML() {
-    for (let key in items) {
-        let itemHTML = `
+    if (document.title !== 'Cart') {
+        for (let key in items) {
+            let itemHTML = `
     <div class="item" id="${items[key].id}" data-item-price="${items[key].price}">
         <img class="firstImg"
              src="${items[key].img1}">
@@ -111,7 +114,64 @@ function addItemToHTML() {
         <i class="fas fa-minus remove-from-cart"></i>
     </div>
     `;
-        document.querySelector('.container').innerHTML += itemHTML;
+            document.querySelector('.container').innerHTML += itemHTML;
+        }
+    }
+}
+
+function addItemToCartHTML() {
+    if (document.title === 'Cart') {
+        console.log('cart');
+        for (let key in items) {
+            let itemId = items[key].id;
+            if (localStorage.getItem(itemId + '-quantity')) {
+                let totalItemPrice = localStorage.getItem(itemId + '-totalPrice');
+                let totalItemPriceDecimal = totalItemPrice.toString().split('.')[1];
+                if (totalItemPriceDecimal.length === 1) {
+                    totalItemPrice += '0';
+                }
+                let cartItemHTML = `
+            <div class="cart-body-product">
+                <div class="cart-body-item">
+                    <p>${items[key].name}</p>
+                </div>
+                <div class="cart-body-item">
+                    <p>$${items[key].price}</p>
+                </div>
+                <div class="cart-body-item">
+                    <p>${localStorage.getItem(itemId + '-quantity')}</p>
+                </div>
+                <div class="cart-body-item">
+                    <p>$${totalItemPrice}</p>
+                </div>
+        </div>
+        `;
+                document.querySelector('.cart-body').innerHTML += cartItemHTML;
+            }
+        }
+    }
+}
+
+function addFooterToCartHTML() {
+    if (document.title === 'Cart') {
+        let totalWithoutTax = localStorage.getItem('total');
+        let taxCost = (totalWithoutTax * 0.08).toFixed(2);
+        let totalWithTax = (parseFloat(totalWithoutTax) + parseFloat(taxCost)).toFixed(2);
+        let footerHTML = `
+        <div class="cart-footer-item">
+            <p>Subtotal</p>
+            <p>$${totalWithoutTax}</p>
+        </div>
+        <div class="cart-footer-item">
+            <p>Shipping</p>
+            <p>$${taxCost}</p>
+        </div>
+        <div class="cart-footer-item">
+            <p>Total</p>
+            <p>$${totalWithTax}</p>
+        </div>
+        `;
+        document.querySelector('.cart-footer').innerHTML += footerHTML;
     }
 }
 
