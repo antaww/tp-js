@@ -154,7 +154,7 @@ function addItemToCartHTML() {
 
 function addFooterToCartHTML() {
     if (document.title === 'Cart') {
-        let totalWithoutTax = localStorage.getItem('total');
+        let totalWithoutTax = parseFloat(localStorage.getItem('total')).toFixed(2);
         let taxCost = (totalWithoutTax * 0.08).toFixed(2);
         let totalWithTax = (parseFloat(totalWithoutTax) + parseFloat(taxCost)).toFixed(2);
         let footerHTML = `
