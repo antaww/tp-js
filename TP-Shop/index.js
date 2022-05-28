@@ -124,34 +124,39 @@ function addItemToHTML() {
  */
 function addToCart(item) {
     let itemId = item.getAttribute('id');
-    if (localStorage.getItem(itemId + '-quantity') === null) {
-        localStorage.setItem(itemId + '-quantity', "1");
+    let itemPrice = item.getAttribute('data-item-price');
+    let quantity = localStorage.getItem(itemId + '-quantity');
+    if (quantity === null) {
+        quantity = 1;
     } else {
-        let quantity = localStorage.getItem(itemId + '-quantity');
         quantity++;
-        localStorage.setItem(itemId + '-quantity', quantity);
     }
-    updateCart(item, itemId);
+    localStorage.setItem(itemId + '-quantity', quantity);
+    localStorage.setItem(itemId + '-totalPrice', (quantity * itemPrice).toString());
+    updateCart();
 }
 
+
 /**
- * The function removes an item from the cart by decreasing the quantity of the item in the local storage by one. If the
- * quantity is one, the item is removed from the local storage
- * @param item - the item that was clicked on
+ * If the quantity of the item is greater than 1, then decrement the quantity and update the total price of the item in the
+ * local storage. Otherwise, remove the item from the local storage
+ * @param item - The item that was clicked on.
  */
 function removeFromCart(item) {
-    let itemId = item.getAttribute('id')
+    let itemId = item.getAttribute('id');
+    let itemPrice = item.getAttribute('data-item-price');
     let quantity = localStorage.getItem(itemId + '-quantity');
     if (quantity > 1) {
         quantity--;
         localStorage.setItem(itemId + '-quantity', quantity);
+        localStorage.setItem(itemId + '-totalPrice', (quantity * itemPrice).toString());
     } else {
         localStorage.removeItem(itemId + '-quantity');
         localStorage.removeItem(itemId + '-totalPrice');
-        localStorage.removeItem('total');
     }
-    updateCart(item, itemId);
+    updateCart();
 }
+
 
 /**
  * It loops through all the items in localStorage, and if the key contains '-totalPrice', it adds the value to the total
@@ -168,17 +173,13 @@ function getTotal() {
     return total.toString();
 }
 
+
 /**
- * It updates the total price of an item in the cart
- * @param item - the item that was clicked
- * @param itemId - the id of the item
+ * It updates the total in localStorage
  */
-function updateCart(item, itemId) {
-    let itemPrice = parseFloat(item.dataset.itemPrice);
-    itemPrice = itemPrice.toFixed(2);
-    let totalPriceItem = localStorage.getItem(itemId + '-quantity') * itemPrice;
-    totalPriceItem = totalPriceItem.toFixed(2);
-    localStorage.setItem(itemId + '-totalPrice', totalPriceItem);
+function updateCart() {
     localStorage.setItem('total', getTotal());
-    console.log(totalPriceItem);
+    if (localStorage.getItem('total') === '0') {
+        localStorage.removeItem('total');
+    }
 }
